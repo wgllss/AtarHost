@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="host.atar.com.plugin_apk">
+
+    <application
+        android:name=".application.PluginApplication"
+        android:allowBackup="false"
+        android:excludeFromRecents="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@android:style/Theme.Light.NoTitleBar">
+
+        <!-- 2.x 的插件需要运行在 Phantom 2.0.0 及以上版本 -->
+        <meta-data
+            android:name="phantom.service.import.PhantomVersionService"
+            android:value="20000" />
+
+        <activity
+            android:name=".activity.MainActivity"
+            android:label="MainActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!--<activity-->
+        <!--android:name=".SingleInstanceActivity"-->
+        <!--android:launchMode="singleInstance" />-->
+        <!--<activity-->
+        <!--android:name=".SingleTopActivity"-->
+        <!--android:launchMode="singleTop" />-->
+        <!--<activity-->
+        <!--android:name=".SingleTaskActivity"-->
+        <!--android:launchMode="singleTask" />-->
+        <!--<activity-->
+        <!--android:name=".StandardActivity"-->
+        <!--android:launchMode="standard" />-->
+
+        <service android:name=".service.PluginIntentService" />
+        <service android:name=".service.PluginService" />
+    </application>
+
+</manifest>
